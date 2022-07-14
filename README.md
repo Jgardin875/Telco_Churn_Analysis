@@ -191,7 +191,7 @@ Modeling
 Select Evaluation Metric
 
  precision is highest in m1
- recall is highest in m3
+ recall is highest in m2
 
 If giving promotion deals to convice people to stay:
     
@@ -241,7 +241,7 @@ Evaluate on Validate
 
 Evaluate Top Model on Test
 
-    Your top performing model, and only your top performing model should be evaluated on your test dataset. The purpose of having a test dataset to evaluate only the final model on is to have an estimate of how the model will perform in the future on data it has never seen.
+Although model 3 is most accurate overall, Model 2 is the max recall for churn customers. As maximizing recall is the goal, I've decided to go with model 2. 
 
 
 

@@ -125,6 +125,35 @@ df.shape, train.shape, validate.shape, test.shape
 
 
 
+# In[1]:
+
+
+def prep_pred_telco(df):
+    df.drop(columns = ['payment_type_id', 'internet_service_type_id', 'contract_type_id'], inplace = True)
+    dummy_df = pd.get_dummies(df[['contract_type', 'internet_service_type', 'payment_type']], dummy_na=False, drop_first= False)
+    df = pd.concat([df, dummy_df], axis=1)
+    df = df[df.total_charges != ' ']
+    df.total_charges = df.total_charges.astype(float)
+    
+    
+    # encode binary categorical variables into numeric values
+    df['gender_encoded'] = df.gender.map({'Female': 1, 'Male': 0})
+    df['partner_encoded'] = df.partner.map({'Yes': 1, 'No': 0})
+    df['dependents_encoded'] = df.dependents.map({'Yes': 1, 'No': 0})
+    df['phone_service_encoded'] = df.phone_service.map({'Yes': 1, 'No': 0})
+    df['multiple_lines_encoded'] = df.multiple_lines.map({'Yes': 1, 'No': 0, 'No phone service': 3})
+    df['online_security_encoded'] = df.online_security.map({'Yes': 1, 'No': 0, 'No internet service': 3})
+    df['online_backup_encoded'] = df.online_backup.map({'Yes': 1, 'No': 0, 'No internet service': 3})
+    df['device_protection_encoded'] = df.device_protection.map({'Yes': 1, 'No': 0, 'No internet service': 3})
+    df['tech_support_encoded'] = df.tech_support.map({'Yes': 1, 'No': 0, 'No internet service': 3})
+    df['streaming_tv_encoded'] = df.streaming_tv.map({'Yes': 1, 'No': 0, 'No internet service': 3})
+    df['streaming_movies_encoded'] = df.streaming_movies.map({'Yes': 1, 'No': 0, 'No internet service': 3})
+    df['paperless_billing_encoded'] = df.paperless_billing.map({'Yes': 1, 'No': 0})
+    df['churn_encoded'] = df.churn.map({'Yes': 1, 'No': 0})
+    df.drop(columns = 'churn', inplace = True)
+    return df
+
+
 # In[ ]:
 
 
