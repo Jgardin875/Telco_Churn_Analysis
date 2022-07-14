@@ -23,7 +23,7 @@ Target Variable: Churn
 
 You will need an env.py file that contains the hostname, username and password of the mySQL database that contains the telco_churn db. Store that env file locally in the repository.
 
-Clone my repo (including the acquire.py and prepare.py) (confirm .gitignore is hiding your env.py file)
+Clone my repo (including the acquire.py, Explore.py, and prepare.py) (confirm .gitignore is hiding your env.py file)
 
 Libraries used are pandas, matplotlib, seaborn, numpy, sklearn, and scipy.stats.
 
