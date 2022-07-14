@@ -134,42 +134,74 @@ Explore
     Are the major causes of churn entire groups? or subgroups? ie. all payment methods are equally terrible, or is it just one payment type?
 
 
-For example: (report)
+For example:
 
-    Was the phrase "women and children first" just a myth or did they really try to get out women and children first? If so, they would show as more likely to survive.
-
-    are women more likely to survive? plot barplot x-axis is sex and y-axis is survival rate
-    are children more likely to survive? bin age into 0-16, 17+, plot barplot on x-axis where y is survival rate (new variable = is_child)
-    run chi-square test sex + survival
-    run a chi-square test is_child + survival
-    run a t-test on age and survived
+Visual:
+    graph all object variables coding for churn (bar graph, histograms)
+    graph continuous variables coding for churn (scatterplot)
+    
+Statistical: 
+    chi^2 statistics for all object variables
 
 Statistical tests (report.ipynb)
 
-    At least 2 statistical tests are included in your final report.
+        chi-square test: 2 discrete variables. (H_0: the 2 variables are independent of each other)
+        create loop for testing for object variables
 
-    The correct tests are run, given the data type and distribution, and the correct conclusions are drawn. For example (other tests may be used):
+Summary
 
-        correlation: 2 continuous variables, normally distributed, testing for LINEAR correlation only (H_0: Not linearly dependent)
+Features based on visual analysis:
 
-        independent t-test: 1 continuous, somewhat normally distributed variable, one boolean variable, equal variance, independent (H_0: population mean of each group is equal)
+catagories where 40% or more of that group churned:
 
-        chi-square test: 2 discrete variables. (H_0: the 2 variables are independent of each other).
+    Electronic checking
+    Fiber Optic
+    Senior
+    Month-to-month
+    No Tech support
+    Online-backup
+    Device-Protection  
+    
+    
+    
+    
+ Features based on statistical analysis:
 
-Summary (report.ipynb)
+      ['partner',
+     'dependents',
+     'multiple_lines',
+     'online_security',
+     'online_backup',
+     'device_protection',
+     'tech_support',
+     'streaming_tv',
+     'streaming_movies',
+     'paperless_billing',
+     'contract_type',
+     'internet_service_type',
+     'payment_type']  
 
-    Following your exploration section, you summarize your analysis (in a markdown cell using natural language): what you found and how you will use it moving forward.
+    
 
-    This includes key takeaways from all the questions answered in explore, a list of which features will be used in modeling and why, and which features will not move forward and why. You may only call out a few of these features in the presentation, but having that there for reference is important in a report. A group of features may have the same reason why, and those can be mentioned together.
+
+
+
 
 Modeling
-Select Evaluation Metric (Report.ipynb)
+Select Evaluation Metric
 
+ precision is highest in m1
+ recall is highest in m3
 
-
-    Clear communication as to how you evaluated and compared models.
-
-    What metric(s) did you use and why? For example, in one case, you may decide to use precision over accuracy. If so, why? If you use multiple metrics, how will you decide which to select if metric is better for model A but another is better for model B? Will you rank them? Find a way to aggregate them into a single metric you can use to rank?
+If giving promotion deals to convice people to stay:
+    
+    If you want to ensure you get all people likely to churn and are willing to risk a few extra people getting the promotion ----> maximize recall
+    
+    If you only want people likely to churn to get the promotion, and are willing to miss a few members of the target audience to ensure no loyal customers get the promotion ----> maximze precison    
+    
+ I suggest maximizing recall, getting a wider audience with a few extra people getting a promotion    
+    
+    
 
 Evaluate Baseline
 
@@ -207,7 +239,7 @@ Evaluate on Validate
         validate: 78.3%
 
 
-Evaluate Top Model on Test (Report.ipynb)
+Evaluate Top Model on Test
 
     Your top performing model, and only your top performing model should be evaluated on your test dataset. The purpose of having a test dataset to evaluate only the final model on is to have an estimate of how the model will perform in the future on data it has never seen.
 
