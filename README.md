@@ -50,9 +50,23 @@ Companies depend on a stong customer base. Determining why people are leaving th
 
 ### Report findings
 
+Large churn values in:
+    First few months
+    Month-to-Month Contracts
+    Fiber Optic services
+    Electronic checking services
+    Customers without tech support
 
 
+### Recommendations
 
+- 6 month contracts
+- Improve Fiber Optic service
+- Imporve Electronic check service
+- offer tech support for free the first 1-3 months
+
+### Future work
+- investigate cost-benefit relationship for recommendations
 
 
 ### Detailed Project Plan
@@ -241,7 +255,7 @@ Evaluate on Validate
 
 Evaluate Top Model on Test
 
-Although model 3 is most accurate overall, Model 2 is the max recall for churn customers. As maximizing recall is the goal, I've decided to go with model 2. 
+Although model 3 is most accurate overall, Model 2 is the max recall for churn customers. As maximizing recall is the goal, I've decided to go with model 2, depth 3. 
 
 
 
