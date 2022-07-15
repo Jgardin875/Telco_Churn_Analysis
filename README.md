@@ -204,8 +204,8 @@ catagories where 40% or more of that group churned:
 Modeling
 Select Evaluation Metric
 
- precision is highest in m1
- recall is highest in m2
+ precision is highest in m2
+ recall is highest in m3
 
 If giving promotion deals to convice people to stay:
     
@@ -255,7 +255,7 @@ Evaluate on Validate
 
 Evaluate Top Model on Test
 
-Although model 3 is most accurate overall, Model 2 is the max recall for churn customers. As maximizing recall is the goal, I've decided to go with model 2, depth 3. 
+As maximizing recall is the goal, while maintaing about the same accuracy as the other models, I've decided to go with model 3, depth 4. 
 
 
 
